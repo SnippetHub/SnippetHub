@@ -1,0 +1,63 @@
+{
+	"遍历所有文件 glob": {
+		"scope": "python",
+		"prefix": "glob",
+		"body": [
+			"import glob",
+			"import logging",
+			"${1:files} = glob.glob(r'${2:*}.${3:txt}')",
+			"logging.warning(f\"$1 = {$1}\")",
+			"$0"
+		],
+		"description": "遍历所有文件 glob"
+	},
+	"打印变量": {
+		"scope": "python",
+		"prefix": "print",
+		"body": [
+			"print(f'${1:var} = {$1}')",
+			"logging.warning(f'$1 = {$1}')",
+			"$0"
+		],
+		"description": ""
+	},
+	"self变量初始化": {
+		"scope": "python",
+		"prefix": "self",
+		"body": [
+			"self.${1:var} = $1",
+			"$0"
+		],
+		"description": ""
+	},
+	"self函数定义": {
+		"scope": "python",
+		"prefix": "self",
+		"body": [
+			"def ${1:func}(self, ${2:var}) -> None:",
+			"    logging.warning(f\"Enter $1, with $2 = {$2} ... \")",
+			"    result = None",
+			"    $0",
+			"    return result"
+		],
+		"description": ""
+	},
+	"class框架": {
+		"scope": "python",
+		"prefix": "class",
+		"body": [
+			"class ${1:var}:",
+			"    def __init__(self, ${2:var}: str):",
+			"        self.$2 = $2",
+			"    ",
+			"    def fun1(self):",
+			"        pass",
+			"    ",
+			"    @classmethod",
+			"    def cfun1(self):",
+			"        pass",
+			"$0"
+		],
+		"description": ""
+	}
+}
