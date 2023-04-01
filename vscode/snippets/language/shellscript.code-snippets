@@ -1,0 +1,26 @@
+{
+	"检查目录是否存在": {
+		"scope": "shellscript",
+		"prefix": "if",
+		"body": [
+			"if [ -d \"${1:dir}\" ] ",
+			"then",
+			"  echo \"directory $1 exists and continue to ...\"",
+			"$0",
+			"fi"
+		],
+		"description": "检查目录是否存在"
+	},
+	"检查目录是否不存在": {
+		"scope": "shellscript",
+		"prefix": "if",
+		"body": [
+			"if [ ! -d \"${1:dir}\" ] ",
+			"then",
+			"  echo \"directory $1 not exists and continue to ...\"",
+			"$0",
+			"fi"
+		],
+		"description": "检查目录是否不存在"
+	}
+}
